@@ -1,0 +1,256 @@
+:root {
+  color-scheme: light;
+  --bg: #f4efe8;
+  --bg-accent: #dce8f2;
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-strong: #ffffff;
+  --text: #1f2933;
+  --muted: #5b6773;
+  --border: rgba(31, 41, 51, 0.12);
+  --primary: #0f766e;
+  --primary-strong: #115e59;
+  --shadow: 0 20px 50px rgba(31, 41, 51, 0.12);
+  --radius-xl: 24px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --max-width: 1080px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.16), transparent 34%),
+    radial-gradient(circle at top right, rgba(24, 119, 242, 0.12), transparent 32%),
+    linear-gradient(180deg, var(--bg) 0%, #f7f3ed 54%, #eef5f6 100%);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary-strong);
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+.shell {
+  width: min(calc(100% - 32px), var(--max-width));
+  margin: 0 auto;
+  padding: 40px 0 64px;
+}
+
+.hero,
+.panel,
+.policy {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.hero {
+  padding: 44px;
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(15, 118, 110, 0.1);
+  color: var(--primary-strong);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.policy h1 {
+  margin: 0 0 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.hero p,
+.lead {
+  max-width: 760px;
+  margin: 0;
+  font-size: 1.08rem;
+  color: var(--muted);
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(15, 118, 110, 0.15);
+  color: var(--text);
+  font-size: 0.96rem;
+}
+
+.panel {
+  padding: 28px;
+}
+
+.panel h2,
+.policy h2 {
+  margin: 0 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.panel + .panel,
+.policy section + section {
+  margin-top: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background: var(--surface-strong);
+  border: 1px solid rgba(31, 41, 51, 0.08);
+  border-radius: var(--radius-lg);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 11px 16px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.button:hover {
+  background: var(--primary-strong);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.url-list {
+  display: grid;
+  gap: 12px;
+}
+
+.url-item {
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(31, 41, 51, 0.08);
+  overflow-wrap: anywhere;
+}
+
+.policy {
+  padding: 40px;
+}
+
+.policy header {
+  margin-bottom: 26px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.last-updated {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+.policy p {
+  margin: 0;
+}
+
+.policy ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.policy li + li {
+  margin-top: 8px;
+}
+
+.footer-note {
+  margin-top: 28px;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+@media (max-width: 720px) {
+  .shell {
+    width: min(calc(100% - 20px), var(--max-width));
+    padding: 20px 0 36px;
+  }
+
+  .hero,
+  .panel,
+  .policy {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .hero h1,
+  .policy h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+
+  .meta-row {
+    margin-top: 20px;
+  }
+}
